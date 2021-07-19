@@ -45,13 +45,14 @@ void Display()
     cout<<"\t Book Name \t Author Name \t Price \t Number of copies "<<endl;
     for (int i=0; i<n; i++)
     {
-        cout << i+1 << "\t  " << s[i].book_name<< "\t\t  " << s[i].auth_name<< "\t\t  " << s[i].book_price<< "\t\t " << s[i].no_copies << endl;
+        cout << i+1 << "\t\t " << s[i].book_name<< "\t\t  " << s[i].auth_name<< "\t\t  " << s[i].book_price<< "\t\t " << s[i].no_copies << endl;
     }
 }
 
 
 void Search_book ()
 {
+    int flag;
     char search_bname[100];
     cout << "Please enter the name of the book that you want to search: "<<endl;
     cin >> search_bname;
@@ -62,11 +63,13 @@ void Search_book ()
         {
             cout<<" The book is present "<<endl;
             cout<< s[i].book_name << "\t" <<s[i].no_copies<<endl;
+            flag++;
         }
-        else
-        {
-            cout<<"The book is not available. "<<endl;
-        }
+        
+    }
+    if(flag == 0)
+    {
+        cout<< "The book could not be found. "<<endl;
     } 
 }
 
@@ -82,8 +85,6 @@ void Search_auth ()
     {
         if(strcmp(search_aname , s[i].auth_name)==0)
         {
-            //cout<<" The name of the author is present "<<endl;
-            //cout<<"All books by this author: "<<endl;
             cout<< s[i].book_name << "\t" <<s[i].no_copies<<endl;
             flag++;
         }
