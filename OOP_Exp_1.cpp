@@ -9,18 +9,44 @@ struct Library
     char book_name[100] , auth_name[100];
     int no_copies;
     float book_price;
-} s[1000];
+}s[1000];
 
 
 void Add_details()
 {
-    cout<<"Success"<<endl;
+    cout << "Enter the number of entries you wish to make " <<endl;
+    cin >> n;
+    
+    if(n >= 0 && n <= 1000 )
+    {
+        for(int i=0; i<n; i++)
+        {
+            cout << "Enter the name of book "<< i+1 <<endl;
+            cin  >> s[i].book_name;
+            cout <<"Enter the Author of book "<< i+1 <<endl;
+            cin  >> s[i].auth_name;
+            cout <<"Enter the price of book  "<< i+1 <<endl;
+            cin  >> s[i].book_price;
+            cout << "Enter the number of copies of book "<< i+1 <<endl;
+            cin  >> s[i].no_copies;
+        }
+        cout<<"Successfully entered all the details !"<<endl;
+    }
+    else 
+    {
+        cout << "Error ! Please try again. " << endl ;
+    }
+    
 }
 
 
 void Display()
 {
-    cout<<"Success"<<endl;
+    cout<<"\t Book Name \t Author Name \t Price \t Number of copies "<<endl;
+    for (int i=0; i<n; i++)
+    {
+        cout << i+1 << "\t" << s[i].book_name<< "\t" << s[i].auth_name<< "\t" << s[i].book_price<< "\t" << s[i].no_copies << endl;
+    }
 }
 
 
@@ -45,9 +71,7 @@ void Sort()
 int main()
 {
     int ch;
-    cout << "Enter the number of entries you wish to make " <<endl;
-    cin >> n;
-    
+
     do
     {
         cout << "1.	Enter the book details in the system" <<endl;
