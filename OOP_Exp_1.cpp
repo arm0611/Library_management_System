@@ -52,6 +52,7 @@ void Display()
 
 void Search_book ()
 {
+
     cout<<"Success"<<endl;
 }
 
@@ -64,8 +65,23 @@ void Search_auth ()
 
 void Sort()
 {
-    cout<<"Success"<<endl;
+    int i,j;
+    char temp[100];
+    for(i=0;i<=n;i++)
+    {
+      for(j=i+1;j<=n;j++)
+      {
+           if(strcmp(s[i].book_name, s[j].book_name)>0)
+           {
+               strcpy(temp,s[i].book_name);
+              strcpy(s[i].book_name ,s[j].book_name);
+              strcpy(s[j].book_name ,temp);
+           }
+      } 
+    }    
+    cout<<"Successfully sorted ! "<<endl;
 }
+
 
 
 int main()
