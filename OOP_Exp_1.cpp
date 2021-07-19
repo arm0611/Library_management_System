@@ -52,13 +52,47 @@ void Display()
 
 void Search_book ()
 {
+    char search_bname[100];
+    cout << "Please enter the name of the book that you want to search: "<<endl;
+    cin >> search_bname;
 
-    cout<<"Success"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        if(strcmp(search_bname , s[i].book_name)==0)
+        {
+            cout<<" The book is present "<<endl;
+            cout<< s[i].book_name << "\t" <<s[i].no_copies<<endl;
+        }
+        else
+        {
+            cout<<"The book is not available. "<<endl;
+        }
+    } 
 }
 
 
 void Search_auth () 
-{
+{   
+    int flag;
+    char search_aname[100];
+    cout << "Please enter the name of the author that you want to search: "<<endl;
+    cin >> search_aname;
+
+    for (int i = 0; i < n; i++)
+    {
+        if(strcmp(search_aname , s[i].auth_name)==0)
+        {
+            //cout<<" The name of the author is present "<<endl;
+            //cout<<"All books by this author: "<<endl;
+            cout<< s[i].book_name << "\t" <<s[i].no_copies<<endl;
+            flag++;
+        }
+        
+    } 
+    if(flag == 0)
+    {
+        cout<< "The name of this author is absent"<<endl;
+    }
     cout<<"Success"<<endl;
 }
 
