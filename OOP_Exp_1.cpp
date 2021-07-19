@@ -45,7 +45,7 @@ void Display()
     cout<<"\t Book Name \t Author Name \t Price \t Number of copies "<<endl;
     for (int i=0; i<n; i++)
     {
-        cout << i+1 << "\t" << s[i].book_name<< "\t" << s[i].auth_name<< "\t" << s[i].book_price<< "\t" << s[i].no_copies << endl;
+        cout << i+1 << "\t  " << s[i].book_name<< "\t\t  " << s[i].auth_name<< "\t\t  " << s[i].book_price<< "\t\t " << s[i].no_copies << endl;
     }
 }
 
@@ -67,9 +67,9 @@ void Sort()
 {
     int i,j;
     char temp[100];
-    for(i=0;i<=n;i++)
+    for(i=0;i<n;i++)
     {
-      for(j=i+1;j<=n;j++)
+      for(j=i+1;j<n;j++)
       {
            if(strcmp(s[i].book_name, s[j].book_name)>0)
            {
@@ -79,6 +79,7 @@ void Sort()
            }
       } 
     }    
+    Display();
     cout<<"Successfully sorted ! "<<endl;
 }
 
@@ -90,10 +91,10 @@ int main()
 
     do
     {
-        cout << "1.	Enter the book details in the system" <<endl;
+        cout << "1.	Enter the book details in the system." <<endl;
         cout << "2.	Display the complete list of the books." <<endl;
         cout << "3.	Search the book in the library by its name." <<endl;
-        cout << "4.	Search the books in the library by Author Name" <<endl;
+        cout << "4.	Search the books in the library by Author Name." <<endl;
         cout << "5.	Sort the list of books by its name." <<endl;
         cout << "6. Exit." <<endl;
         cout << "Please enter a choice: " <<endl;
