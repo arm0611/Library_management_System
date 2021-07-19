@@ -42,7 +42,7 @@ void Add_details()
 
 void Display()
 {
-    cout<<"\t Book Name \t Author Name \t Price \t Number of copies "<<endl;
+    cout<<"\t Book Name \t\t Author Name \t\t Price \t\t Number of copies "<<endl;
     for (int i=0; i<n; i++)
     {
         cout << i+1 << "\t\t " << s[i].book_name<< "\t\t  " << s[i].auth_name<< "\t\t  " << s[i].book_price<< "\t\t " << s[i].no_copies << endl;
@@ -94,7 +94,6 @@ void Search_auth ()
     {
         cout<< "The name of this author is absent"<<endl;
     }
-    cout<<"Success"<<endl;
 }
 
 
