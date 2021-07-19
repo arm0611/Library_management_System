@@ -53,7 +53,6 @@ void Display()
 void Search_book ()
 {
     cout<<"Success"<<endl;
-    cout<<"zChecking";
 }
 
 
